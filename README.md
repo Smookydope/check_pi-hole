@@ -45,6 +45,12 @@ With this plugin you can monitor Pi-Hole for the following values:
 <br>
 <br>
  
+ 
+You can find your Pi-Hole Token (Api key) in /etc/pihole/setupVars.conf. It is labeled as WEBPASSWORD.
+<br>
+<br>
+
+ 
 Thx to AngularSpecter and Fliegema for the beautiful work.
 <br>
  
