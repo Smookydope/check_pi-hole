@@ -8,7 +8,7 @@ With this plugin you can monitor Pi-Hole for the following values:
 - unique domains
 - queries forwarded
 - queries cached
-- unique_clients
+- unique clients
 <br>
 
 ### Usage:
