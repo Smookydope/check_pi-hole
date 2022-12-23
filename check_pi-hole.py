@@ -8,7 +8,7 @@ url = '/admin/api.php?summaryRaw&auth='
 
 #parse command line options
 parser = argparse.ArgumentParser(description = 'Check Status of PIHOLE Ad blockerf' )
-parser.add_argument('-h', '--help',     help='Displays this message', action='help')
+#parser.add_argument('-h', '--help',     help='Displays this message', action='help')
 parser.add_argument('-t', '--timeout',  help='timeout', default=500, type=int )
 parser.add_argument('-w', '--warning',  help='warning threshold', default=None )
 parser.add_argument('-c', '--critical', help='critical threshold', default=None )
