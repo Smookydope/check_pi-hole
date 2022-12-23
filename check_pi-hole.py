@@ -4,7 +4,7 @@ import sys, base64, re, urllib.request
 import argparse, json
 
 ip = '10.8.1.10'
-url = '/admin/api.php?summaryRaw'
+url = '/admin/api.php?summaryRaw&auth='
 
 #parse command line options
 parser = argparse.ArgumentParser(description = 'Check Status of PIHOLE Ad blockerf' )
@@ -13,12 +13,13 @@ parser.add_argument('-t', '--timeout',  help='timeout', default=500, type=int )
 parser.add_argument('-w', '--warning',  help='warning threshold', default=None )
 parser.add_argument('-c', '--critical', help='critical threshold', default=None )
 parser.add_argument('-H', '--hostname', help='Hostname', default=ip )
+parser.add_argument('-T', '--token',    help='Token', default=None )
 parser.add_argument('-v', '--verbose' , help='Verbose mode', action='store_true')
 parser.add_argument('parameter' ,       help='parameter to check', choices=['total_queries', 'blocked_today', 'pct_today', 'unique_domains', 'queries_forwarded', 'queries_cached', 'unique_clients'])
 args = parser.parse_args()
 
 
-status_url = 'http://' + args.hostname + url
+status_url = 'http://' + args.hostname + url + args.token
 
 try:
   request = urllib.request.urlopen( status_url )
